@@ -98,7 +98,7 @@ Starter setup:
    - Run the API Gateway application to handle routing.
 
 4. **Run Zipkin**:
-  - pull and run the zipkin with `docker run -d -p 9411:9411 openzipkin/zipkin.`
+   - Pull and run the zipkin with `docker run -d -p 9411:9411 openzipkin/zipkin.`
 
 4. **Start Microservices**:
    - Run Department, Employee, and Project services to handle respective operations.
