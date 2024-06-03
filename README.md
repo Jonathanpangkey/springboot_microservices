@@ -1,7 +1,12 @@
 # Springboot Microservices
 This is an application that shows the application of the microservices concept, this application is designed to manage employees, departments and tasks across various services. Utilize centralized configuration, service discovery, tracing logging and api gateway.
+Starter setup:
+- **Language**: Java
+- **IDE**: IntelliJ IDEA or any preferred Java IDE.
+- **Docker**: Containerization platform in this app used for zipkin.
+- **Database**: PostgreSQL for storing application data.
 
-## Microservices Environment
+## Microservices Architecture
 
 1. **Department Service** - Manages departments.
 2. **Employee Service** - Manages employees and interacts with the Department and Project services.
@@ -91,6 +96,9 @@ This is an application that shows the application of the microservices concept, 
 
 3. **Start API Gateway**:
    - Run the API Gateway application to handle routing.
+
+4. **Run Zipkin**:
+  - pull and run the zipkin with `docker run -d -p 9411:9411 openzipkin/zipkin.`
 
 4. **Start Microservices**:
    - Run Department, Employee, and Project services to handle respective operations.
