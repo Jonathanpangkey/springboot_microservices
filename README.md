@@ -11,6 +11,76 @@ This is an application that shows the application of the microservices concept, 
 6. **API Gateway** - Acts as an entry point for all client requests.
 7. **Zipkin** - Distributed tracing for monitoring (run from docker).
 
+### Service Descriptions
+
+#### Department Service
+
+- **Purpose**: Manages CRUD operations for departments.
+- **Endpoints**:
+  - Create Department: POST /departments
+  - Get All Departments: GET /departments
+  - Get Department by ID: GET /departments/{id}
+  - Delete Department: DELETE /departments/{id}
+  - Check if Department Exists: GET /departments/exists/{id}
+- **Inter-Service Communication**: Calls Employee Service to retrieve employees in each department.
+
+#### Employee Service
+
+- **Purpose**: Manages CRUD operations for employees.
+- **Endpoints**:
+  - Create Employee: POST /employees
+  - Get All Employees: GET /employees
+  - Get Employee by ID: GET /employees/{id}
+  - Get Employees by Department: GET /employees/department/{department_id}
+  - Delete Employee: DELETE /employees/{id}
+  - Check if Employee Exists: GET /employees/exists/{id}
+- **Inter-Service Communication**: 
+  - Calls Department Service to validate department existence.
+  - Calls Project Service to retrieve tasks for each employee.
+
+#### Project Service
+
+- **Purpose**: Manages CRUD operations for tasks.
+- **Endpoints**:
+  - Create Task: POST /tasks
+  - Get All Tasks: GET /tasks
+  - Get Task by ID: GET /tasks/{id}
+  - Delete Task: DELETE /tasks/{id}
+  - Get Tasks by Employee: GET /tasks/employee/{employee_id}
+- **Inter-Service Communication**: Calls Employee Service to validate employee existence.
+
+### Supporting Services
+
+#### Config Server
+
+- **Purpose**: Centralized configuration management.
+- **Functionality**: Provides configuration properties for all services.
+
+#### Service Registry
+
+- **Purpose**: Service discovery and registration.
+- **Functionality**: Allows services to discover and communicate with each other dynamically.
+
+#### API Gateway
+
+- **Purpose**: Entry point for all client requests.
+- **Functionality**: Routes client requests to appropriate services.
+
+#### Zipkin
+
+- **Purpose**: Distributed tracing for monitoring and troubleshooting.
+- **Functionality**: Collects and visualizes trace data from different services to analyze request flows and performance.
+
+
+## Architecture Flow
+
+1. **Client Request**: Enters through the **API Gateway**.
+2. **API Gateway**: Routes the request to the appropriate service (Department, Employee, or Project Service).
+3. **Service Communication**: Services interact with each other as necessary using the **Service Registry** for discovery.
+4. **Configuration**: Services retrieve configuration properties from the **Config Server**.
+5. **Tracing**: All interactions are traced by **Zipkin** for monitoring and debugging.
+
+
 ## Running the Application
 
 1. **Start Config Server**:
