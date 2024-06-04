@@ -1,5 +1,5 @@
 # Springboot Microservices
-This is an application that shows the application of the microservices concept, this application is designed to manage employees, departments and tasks across various services. Utilize centralized configuration, service discovery, tracing logging and api gateway.
+This is an project that shows the application of the microservices concept, this application is designed to manage employees, departments and tasks across various services. Utilize centralized configuration, service discovery, tracing logging and api gateway.
 Starter setup:
 - **Language**: Java
 - **IDE**: IntelliJ IDEA or any preferred Java IDE.
