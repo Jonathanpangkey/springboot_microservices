@@ -8,6 +8,9 @@ Starter setup:
 
 ## Microservices Architecture
 
+<img width="595" alt="Screenshot 2024-06-04 at 09 54 18" src="https://github.com/Jonathanpangkey/springboot_microservices/assets/102292312/d803d0f3-bd9b-4ade-8d6d-8bd7bb329895">
+
+
 1. **Department Service** - Manages departments.
 2. **Employee Service** - Manages employees and interacts with the Department and Project services.
 3. **Project Service** - Manages tasks and associates them with employees.
