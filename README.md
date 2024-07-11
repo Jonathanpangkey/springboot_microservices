@@ -8,7 +8,8 @@ Starter setup:
 
 ## Microservices Architecture
 
-<img width="595" alt="Screenshot 2024-06-04 at 09 54 18" src="https://github.com/Jonathanpangkey/springboot_microservices/assets/102292312/d803d0f3-bd9b-4ade-8d6d-8bd7bb329895">
+
+<img width="724" alt="Screenshot 2024-07-11 at 21 48 03" src="https://github.com/Jonathanpangkey/springboot_microservices/assets/102292312/8834b6be-8ec0-4afa-aadb-fa5e2d415c3a">
 
 
 1. **Department Service** - Manages departments.
